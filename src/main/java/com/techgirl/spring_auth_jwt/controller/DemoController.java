@@ -7,10 +7,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/v1")
-public class JobController {
+public class DemoController {
 
     @GetMapping("/")
     public String index(HttpServletRequest request) {
-        return "Hello World: "+ request.getSession().getId();
+        return "Hello World ";
+    }
+
+    @GetMapping("/user/home")
+    public String userpage(HttpServletRequest request) {
+        return "Hello users";
+    }
+
+    @GetMapping("/admin/home")
+    public String adminpage(HttpServletRequest request) {
+        return "Hello admin";
     }
 }
